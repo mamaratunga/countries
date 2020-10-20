@@ -11,6 +11,8 @@ import { Country } from './country'
 export class AppComponent {
   title = 'countries';
   countries;
+  regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  selectedCountry;
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +35,9 @@ export class AppComponent {
     obs.subscribe((response) => {
       this.countries = response;
     });
+  }
+
+  selectCountry(event: any) {
+    this.selectedCountry = event;
   }
 }

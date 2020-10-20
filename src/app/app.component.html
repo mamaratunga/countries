@@ -1,17 +1,23 @@
 <h1>Country List</h1>
 <button (click)="getAllCountries()">All Countries</button>
 <select name="region" (change)="filterRegion($event)">
-  <option value="Africa">Africa</option>
-  <option value="Americas">Americas</option>
-  <option value="Asia">Asia</option>
-  <option value="Europe">Europe</option>
-  <option value="Oceania">Oceania</option>
+  <option value="" selected hidden disabled>Select Region</option>
+  <option *ngFor="let region of regions">{{region}}</option>
 </select>
 <input name="countryName" (keyup)="searchCountries($event)">
 <ul>
-  <li *ngFor="let country of countries">{{country.name}}
+  <li *ngFor="let country of countries" (click)="selectCountry(country)">
+    <strong>{{country.name}}</strong>
     Population: {{country.population}}
     Region: {{country.region}}
     <img src={{country.flag}} height="10">
   </li>
 </ul>
+<div *ngIf="selectedCountry">
+  <strong>Name: {{selectedCountry.name}}</strong>
+  Capital: {{selectedCountry.capital}}
+  Region: {{selectedCountry.region}}
+  Population: {{selectedCountry.population}}
+  Currency: {{selectedCountry.currencies[0].name}}
+  Language: {{selectedCountry.languages[0].name}}
+</div>
