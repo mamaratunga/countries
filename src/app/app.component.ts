@@ -14,9 +14,22 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
 
+  filterRegion(event: any) {
+    let obs = this.http.get('https://restcountries.eu/rest/v2/region/' + event.target.value);
+    obs.subscribe((response) => {
+      this.countries = response;
+    });
+  }
 
-  getCountries() {
+  getAllCountries() {
     let obs = this.http.get('https://restcountries.eu/rest/v2/all');
+    obs.subscribe((response) => {
+      this.countries = response;
+    });
+  }
+
+  searchCountries(event: any) {
+    let obs = this.http.get('https://restcountries.eu/rest/v2/name/' + event.target.value);
     obs.subscribe((response) => {
       this.countries = response;
     });

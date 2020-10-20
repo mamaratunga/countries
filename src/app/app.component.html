@@ -1,4 +1,13 @@
 <h1>Country List</h1>
+<button (click)="getAllCountries()">All Countries</button>
+<select name="region" (change)="filterRegion($event)">
+  <option value="Africa">Africa</option>
+  <option value="Americas">Americas</option>
+  <option value="Asia">Asia</option>
+  <option value="Europe">Europe</option>
+  <option value="Oceania">Oceania</option>
+</select>
+<input name="countryName" (keyup)="searchCountries($event)">
 <ul>
   <li *ngFor="let country of countries">{{country.name}}
     Population: {{country.population}}
@@ -6,4 +15,3 @@
     <img src={{country.flag}} height="10">
   </li>
 </ul>
-<button (click)="getCountries()">Find Countries</button>
