@@ -1,5 +1,9 @@
 <h1>Country List</h1>
 <ul>
-  <li *ngFor="let country of countries">{{country.name}}</li>
+  <li *ngFor="let country of countries">{{country.name}}
+    Population: {{country.population}}
+    Region: {{country.region}}
+    <img src={{country.flag}} height="10">
+  </li>
 </ul>
 <button (click)="getCountries()">Find Countries</button>

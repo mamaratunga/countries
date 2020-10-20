@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Country } from './country'
 
 @Component({
@@ -8,18 +10,15 @@ import { Country } from './country'
 })
 export class AppComponent {
   title = 'countries';
-  country: Country = { name: "USA" };
-  country2: Country = { name: "Mexico" };
-  country3: Country = { name: "Canada" };
-  countries = [];
+  countries;
+
+  constructor(private http: HttpClient) { }
 
 
   getCountries() {
-    if (this.countries.length === 0) {
-      this.countries = [this.country, this.country2, this.country3];
-    }
-    else {
-      this.countries = [];
-    }
+    let obs = this.http.get('https://restcountries.eu/rest/v2/all');
+    obs.subscribe((response) => {
+      this.countries = response;
+    });
   }
 }
