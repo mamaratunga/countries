@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{country.name}}</h2>
+<mat-dialog-content>
+    <strong>Capital:</strong> {{country.capital}}<br>
+    <strong>Region:</strong> {{country.region}}<br>
+    <strong>Population:</strong> {{country.population}}<br>
+    <strong>Currency:</strong> {{country.currencies[0].name}}<br>
+    <strong>Language:</strong> {{country.languages[0].name}}<br>
+    <strong>Latitude:</strong> {{country.latlng[0]}} <strong>Longitude:</strong> {{country.latlng[1]}}<br>
+    <img src={{country.flag}} height="100">
+</mat-dialog-content>

@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Country } from './country'
+import { MatDialog } from '@angular/material/dialog';
+import { CountryDialogComponent } from './country-dialog/country-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -11,33 +10,14 @@ import { Country } from './country'
 export class AppComponent {
   title = 'countries';
   countries;
-  regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
-  selectedCountry;
 
-  constructor(private http: HttpClient) { }
+  constructor(public dialog: MatDialog) { }
 
-  filterRegion(event: any) {
-    let obs = this.http.get('https://restcountries.eu/rest/v2/region/' + event.target.value);
-    obs.subscribe((response) => {
-      this.countries = response;
-    });
-  }
-
-  getAllCountries() {
-    let obs = this.http.get('https://restcountries.eu/rest/v2/all');
-    obs.subscribe((response) => {
-      this.countries = response;
-    });
-  }
-
-  searchCountries(event: any) {
-    let obs = this.http.get('https://restcountries.eu/rest/v2/name/' + event.target.value);
-    obs.subscribe((response) => {
-      this.countries = response;
-    });
+  listCountries(event: any) {
+    this.countries = event;
   }
 
   selectCountry(event: any) {
-    this.selectedCountry = event;
+    this.dialog.open(CountryDialogComponent, { data: event });
   }
 }

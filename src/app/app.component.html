@@ -1,10 +1,8 @@
-<h1>Country List</h1>
-<button (click)="getAllCountries()">All Countries</button>
-<select name="region" (change)="filterRegion($event)">
-  <option value="" selected hidden disabled>Select Region</option>
-  <option *ngFor="let region of regions">{{region}}</option>
-</select>
-<input name="countryName" (keyup)="searchCountries($event)">
+<h1>Country Directory</h1>
+<h4>Learn more about the countries of the world</h4>
+
+<app-get-countries-menu (countryEmitter)="listCountries($event)"></app-get-countries-menu>
+
 <ul>
   <li *ngFor="let country of countries" (click)="selectCountry(country)">
     <strong>{{country.name}}</strong>
@@ -13,11 +11,3 @@
     <img src={{country.flag}} height="10">
   </li>
 </ul>
-<div *ngIf="selectedCountry">
-  <strong>Name: {{selectedCountry.name}}</strong>
-  Capital: {{selectedCountry.capital}}
-  Region: {{selectedCountry.region}}
-  Population: {{selectedCountry.population}}
-  Currency: {{selectedCountry.currencies[0].name}}
-  Language: {{selectedCountry.languages[0].name}}
-</div>
