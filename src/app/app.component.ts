@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { CountryDialogComponent } from './country-dialog/country-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +9,9 @@ export class AppComponent {
   title = 'countries';
   countries;
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
-  listCountries(event: any) {
+  updateCountries(event: any) {
     this.countries = event;
-  }
-
-  selectCountry(event: any) {
-    this.dialog.open(CountryDialogComponent, { data: event });
   }
 }

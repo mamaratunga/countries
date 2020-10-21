@@ -1,0 +1,8 @@
+<mat-list class="list">
+    <mat-list-item *ngFor="let country of countries" (click)="selectCountry(country)" class="list-item">
+        <div class="name">{{country.name}}</div>
+        <div class="population">Population: {{country.population}}</div>
+        <div class="region">Region: {{country.region}}</div>
+        <img src={{country.flag}} height="15">
+    </mat-list-item>
+</mat-list>

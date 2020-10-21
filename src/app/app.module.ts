@@ -6,17 +6,20 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountryDialogComponent } from './country-dialog/country-dialog.component';
 import { GetCountriesMenuComponent } from './get-countries-menu/get-countries-menu.component';
+import { CountryListComponent } from './country-list/country-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryDialogComponent,
-    GetCountriesMenuComponent
+    GetCountriesMenuComponent,
+    CountryListComponent
   ],
   entryComponents: [CountryDialogComponent],
   imports: [
@@ -27,7 +30,8 @@ import { GetCountriesMenuComponent } from './get-countries-menu/get-countries-me
     MatSelectModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

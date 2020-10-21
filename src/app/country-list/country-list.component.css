@@ -1,0 +1,31 @@
+.name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.population {
+    margin: 15px;
+}
+
+.region {
+    margin: 15px;
+}
+
+.list {
+   width: 50%;
+   margin: 10px;
+   padding: 20px;
+}
+
+.list :hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.list-item {
+    background-color: lightslategray;
+    border-color: black;
+    border-style: solid;
+    margin-bottom: 5px;
+}

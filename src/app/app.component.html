@@ -1,13 +1,6 @@
 <h1>Country Directory</h1>
 <h4>Learn more about the countries of the world</h4>
 
-<app-get-countries-menu (countryEmitter)="listCountries($event)"></app-get-countries-menu>
+<app-get-countries-menu (countryEmitter)="updateCountries($event)"></app-get-countries-menu>
 
-<ul>
-  <li *ngFor="let country of countries" (click)="selectCountry(country)">
-    <strong>{{country.name}}</strong>
-    Population: {{country.population}}
-    Region: {{country.region}}
-    <img src={{country.flag}} height="10">
-  </li>
-</ul>
+<app-country-list [countries]="countries"></app-country-list>
