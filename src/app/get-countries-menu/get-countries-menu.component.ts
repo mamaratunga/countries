@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChildrenOutletContexts } from '@angular/router';
 
 @Component({
   selector: 'app-get-countries-menu',
@@ -10,11 +11,20 @@ export class GetCountriesMenuComponent implements OnInit {
   @Output() countryEmitter = new EventEmitter<object>();
   countries;
   regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  menuChoice;
+  menuChoices = ["All Countries", "Filter By Region", "Search"]
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.countries = [];
+    this.menuChoice = "";
+  }
+
+  changeSelectionMethod(choice: string) {
+    this.menuChoice = choice;
+    this.countries = [];
+    this.countryEmitter.emit(this.countries);
   }
 
   filterRegion(event: any) {
@@ -35,7 +45,8 @@ export class GetCountriesMenuComponent implements OnInit {
 
   searchCountries(event: any) {
     if (!event.target.value) {
-      this.getAllCountries();
+      this.countries = [];
+      this.countryEmitter.emit(this.countries);
     }
     else {
       let obs = this.http.get('https://restcountries.eu/rest/v2/name/' + event.target.value);

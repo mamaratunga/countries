@@ -1,22 +1,20 @@
-<!-- HTML 
-<button (click)="getAllCountries()">All Countries</button>
-<select name="region" (change)="filterRegion($event)">
-  <option value="" selected hidden disabled>Select Region</option>
-  <option *ngFor="let region of regions">{{region}}</option>
-</select>
-<input name="countryName" (keyup)="searchCountries($event)">
-<br> 
--->
+<button mat-raised-button color="accent" [matMenuTriggerFor]="menu">Get Countries By</button>
+<mat-menu #menu="matMenu">
+    <button *ngFor="let choice of menuChoices" mat-menu-item (click)="changeSelectionMethod(choice)">{{choice}}</button>
+</mat-menu>
+<br>
 
-<!-- Material -->
-<button color="primary" mat-raised-button (click)="getAllCountries()">All Countries</button>
-<mat-form-field appearance="fill">
-    <mat-label>Region</mat-label>
-    <mat-select (selectionChange)="filterRegion($event)">
-        <mat-option *ngFor="let region of regions" [value]="region">{{region}}</mat-option>
-    </mat-select>
-</mat-form-field>
-<mat-form-field floatLabel="never">
-    <mat-label>Search</mat-label>
-    <input matInput name="countryName" (keyup)="searchCountries($event)">
-</mat-form-field>
+<div class="selection-method">
+    <button *ngIf="menuChoice==='All Countries'" color="accent" mat-stroked-button (click)="getAllCountries()">List All
+        Countries</button>
+    <mat-form-field *ngIf="menuChoice==='Filter By Region'" appearance="fill">
+        <mat-label>Region</mat-label>
+        <mat-select (selectionChange)="filterRegion($event)">
+            <mat-option *ngFor="let region of regions" [value]="region">{{region}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="menuChoice==='Search'" floatLabel="never">
+        <mat-label>Search</mat-label>
+        <input matInput name="countryName" (keyup)="searchCountries($event)">
+    </mat-form-field>
+</div>
