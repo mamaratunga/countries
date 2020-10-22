@@ -1,4 +1,6 @@
-# Overview
+# Countries
+
+## Overview
 
 This project was created to meet requirements set for retreiving and displaying data about countries of the world. It showcases some Angular concepts including nested components, directives (attribute, structural), property binding (interpolation, property, event), Input/Output, use of HTTPClientModule, observables, services, dependency injection, and Angular Material components.
 
@@ -16,10 +18,10 @@ At a high level the web app should:
 ## How to run the project from terminal
 
 * Ensure npm and Angular are installed
-* Pull the project from Github (git pull https://github.com/mamaratunga/countries.git)
-* Navigate to local copy of repo (cd countries)
-* Install node moldules (npm install)
-* Run application (ng serve --open)
+* Pull the project from Github (`git pull https://github.com/mamaratunga/countries.git`)
+* Navigate to local copy of repo (`cd countries`)
+* Install node moldules (`npm install`)
+* Run application (`ng serve --open`)
 
 Application should open on http://localhost:4200/
 
@@ -27,7 +29,7 @@ Application should open on http://localhost:4200/
 
 **User Stories:** To Do
 
-**UX/UI:** I have only used Bootstrap before, never Angular Material. I used as an opportunity to learn and utilize Angular material for the components. Design and layout of the visual elements is usually my largest shortcoming (I typically rely on UX team for this). One of the items in the backlog is to use Angular Material and CSS to create a visually appealing layout.
+**UX/UI:** I have only used Bootstrap before, never Angular Material. I used this as an opportunity to learn and utilize Angular material for the components. Design and layout of the visual elements is usually my largest shortcoming (I typically rely on UX team for this). One of the items in the backlog is to use Angular Material and CSS to create a visually appealing layout.
 
 ## Testing
 
@@ -43,4 +45,5 @@ Things I would like still like to complete:
 * Significant aesthetics overhaul (color, padding, spacing)
 * Add testing
 * Update README with User Stories
+* Upgrade to Angular 10
 * Responsive design
