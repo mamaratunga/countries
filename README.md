@@ -18,7 +18,7 @@ At a high level the web app should:
 ## How to run the project from terminal
 
 * Ensure npm and Angular are installed
-* Pull the project from Github (`git clone https://github.com/mamaratunga/countries.git`)
+* Retrieve the project from Github (`git clone https://github.com/mamaratunga/countries.git`)
 * Navigate to local copy of repo (`cd countries`)
 * Install node modules (`npm install`)
 * Run application (`ng serve --open`)
@@ -35,8 +35,7 @@ Application should open on http://localhost:4200/
 
 Things I would like still like to complete:
 
-* Handle Observables better (possibly with async pipe) to avoid memory leaks
-* Handle HTTP error responses
+* Handle Observables unsubscription or translate to Promises to avoid memory leaks
 * Significant aesthetics overhaul (color, padding, spacing)
 * Add testing
 * Update README with User Stories

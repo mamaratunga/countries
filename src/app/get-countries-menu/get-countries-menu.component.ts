@@ -22,8 +22,7 @@ export class GetCountriesMenuComponent implements OnInit {
 
   changeSelectionMethod(choice: string) {
     this.menuChoice = choice;
-    this.countries = [];
-    this.countryEmitter.emit(this.countries);
+    this.sendNoCountries();
     if (choice === "All Countries") {
       this.getAllCountries();
     }
@@ -34,7 +33,10 @@ export class GetCountriesMenuComponent implements OnInit {
       .subscribe(response => {
         this.countries = response;
         this.countryEmitter.emit(this.countries);
-      });
+      },
+        () => {
+          this.sendNoCountries();
+        });
   }
 
   getAllCountries() {
@@ -42,20 +44,30 @@ export class GetCountriesMenuComponent implements OnInit {
       .subscribe(response => {
         this.countries = response;
         this.countryEmitter.emit(this.countries);
-      });
+      },
+        () => {
+          this.sendNoCountries();
+        });
   }
 
   searchCountries(event: any) {
     if (!event.target.value) {
-      this.countries = [];
-      this.countryEmitter.emit(this.countries);
+      this.sendNoCountries();
     }
     else {
       this.countryService.getCountriesBySearch(event.target.value)
         .subscribe(response => {
           this.countries = response;
           this.countryEmitter.emit(this.countries);
-        });
+        },
+          () => {
+            this.sendNoCountries();
+          });
     }
+  }
+
+  private sendNoCountries() {
+    this.countries = [];
+    this.countryEmitter.emit(this.countries);
   }
 }
