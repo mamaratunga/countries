@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ChildrenOutletContexts } from '@angular/router';
 
 @Component({
   selector: 'app-get-countries-menu',
@@ -25,6 +24,9 @@ export class GetCountriesMenuComponent implements OnInit {
     this.menuChoice = choice;
     this.countries = [];
     this.countryEmitter.emit(this.countries);
+    if (choice === "All Countries") {
+      this.getAllCountries();
+    }
   }
 
   filterRegion(event: any) {

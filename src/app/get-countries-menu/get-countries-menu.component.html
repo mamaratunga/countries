@@ -1,12 +1,10 @@
-<button mat-raised-button color="accent" [matMenuTriggerFor]="menu">Get Countries By</button>
+<button mat-raised-button color="accent" [matMenuTriggerFor]="menu">Get Countries</button>
 <mat-menu #menu="matMenu">
     <button *ngFor="let choice of menuChoices" mat-menu-item (click)="changeSelectionMethod(choice)">{{choice}}</button>
 </mat-menu>
 <br>
 
 <div class="selection-method">
-    <button *ngIf="menuChoice==='All Countries'" color="accent" mat-stroked-button (click)="getAllCountries()">List All
-        Countries</button>
     <mat-form-field *ngIf="menuChoice==='Filter By Region'" appearance="fill">
         <mat-label>Region</mat-label>
         <mat-select (selectionChange)="filterRegion($event)">
