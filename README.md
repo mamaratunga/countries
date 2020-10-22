@@ -1,27 +1,46 @@
-# Countries
+# Overview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+This project was created to meet requirements set for retreiving and displaying data about countries of the world. It showcases some Angular concepts including nested components, directives (attribute, structural), property binding (interpolation, property, event), Input/Output, use of HTTPClientModule, observables, services, dependency injection, and Angular Material components.
 
-## Development server
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+At a high level the web app should:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Provide ability to view all countries
+* Provide ability to list countries by region
+* Provide ability to search for countries (partial or full name)
+* Provide ability to get further details about a country by clicking on it in the list
 
-## Build
+## How to run the project from terminal
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Ensure npm and Angular are installed
+* Pull the project from Github (git pull https://github.com/mamaratunga/countries.git)
+* Navigate to local copy of repo (cd countries)
+* Install node moldules (npm install)
+* Run application (ng serve --open)
 
-## Running unit tests
+Application should open on http://localhost:4200/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Creating the application
 
-## Running end-to-end tests
+**User Stories:** To Do
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**UX/UI:** I have only used Bootstrap before, never Angular Material. I used as an opportunity to learn and utilize Angular material for the components. Design and layout of the visual elements is usually my largest shortcoming (I typically rely on UX team for this). One of the items in the backlog is to use Angular Material and CSS to create a visually appealing layout.
 
-## Further help
+## Testing
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To Do
+
+## Backlog
+
+Things I would like still like to complete:
+
+* Move HTTP Calls to a service
+* Handle Observables better (possibly with async pipe) to avoid memory leaks
+* Handle HTTP error responses
+* Significant aesthetics overhaul (color, padding, spacing)
+* Add testing
+* Update README with User Stories
+* Responsive design
