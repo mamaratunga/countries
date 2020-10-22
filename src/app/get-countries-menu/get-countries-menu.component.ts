@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-get-countries-menu',
@@ -13,7 +13,7 @@ export class GetCountriesMenuComponent implements OnInit {
   menuChoice;
   menuChoices = ["All Countries", "Filter By Region", "Search"]
 
-  constructor(private http: HttpClient) { }
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.countries = [];
@@ -30,19 +30,19 @@ export class GetCountriesMenuComponent implements OnInit {
   }
 
   filterRegion(event: any) {
-    let obs = this.http.get('https://restcountries.eu/rest/v2/region/' + event.value);
-    obs.subscribe((response) => {
-      this.countries = response;
-      this.countryEmitter.emit(this.countries);
-    });
+    this.countryService.getCountriesByRegion(event.value)
+      .subscribe(response => {
+        this.countries = response;
+        this.countryEmitter.emit(this.countries);
+      });
   }
 
   getAllCountries() {
-    let obs = this.http.get('https://restcountries.eu/rest/v2/all');
-    obs.subscribe((response) => {
-      this.countries = response;
-      this.countryEmitter.emit(this.countries);
-    });
+    this.countryService.getAllCountries()
+      .subscribe(response => {
+        this.countries = response;
+        this.countryEmitter.emit(this.countries);
+      });
   }
 
   searchCountries(event: any) {
@@ -51,11 +51,11 @@ export class GetCountriesMenuComponent implements OnInit {
       this.countryEmitter.emit(this.countries);
     }
     else {
-      let obs = this.http.get('https://restcountries.eu/rest/v2/name/' + event.target.value);
-      obs.subscribe((response) => {
-        this.countries = response;
-        this.countryEmitter.emit(this.countries);
-      });
+      this.countryService.getCountriesBySearch(event.target.value)
+        .subscribe(response => {
+          this.countries = response;
+          this.countryEmitter.emit(this.countries);
+        });
     }
   }
 }

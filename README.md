@@ -18,9 +18,9 @@ At a high level the web app should:
 ## How to run the project from terminal
 
 * Ensure npm and Angular are installed
-* Pull the project from Github (`git pull https://github.com/mamaratunga/countries.git`)
+* Pull the project from Github (`git clone https://github.com/mamaratunga/countries.git`)
 * Navigate to local copy of repo (`cd countries`)
-* Install node moldules (`npm install`)
+* Install node modules (`npm install`)
 * Run application (`ng serve --open`)
 
 Application should open on http://localhost:4200/
@@ -31,15 +31,10 @@ Application should open on http://localhost:4200/
 
 **UX/UI:** I have only used Bootstrap before, never Angular Material. I used this as an opportunity to learn and utilize Angular material for the components. Design and layout of the visual elements is usually my largest shortcoming (I typically rely on UX team for this). One of the items in the backlog is to use Angular Material and CSS to create a visually appealing layout.
 
-## Testing
-
-To Do
-
 ## Backlog
 
 Things I would like still like to complete:
 
-* Move HTTP Calls to a service
 * Handle Observables better (possibly with async pipe) to avoid memory leaks
 * Handle HTTP error responses
 * Significant aesthetics overhaul (color, padding, spacing)

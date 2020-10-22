@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountryDialogComponent } from './country-dialog/country-dialog.component';
 import { GetCountriesMenuComponent } from './get-countries-menu/get-countries-menu.component';
 import { CountryListComponent } from './country-list/country-list.component';
+import { CountryService } from './country.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CountryListComponent } from './country-list/country-list.component';
     MatListModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
