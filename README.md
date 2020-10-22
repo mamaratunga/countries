@@ -4,7 +4,7 @@
 
 This project was created to meet requirements set for retreiving and displaying data about countries of the world. It showcases some Angular concepts including nested components, directives (attribute, structural), property binding (interpolation, property, event), Input/Output, use of HTTPClientModule, observables, services, dependency injection, and Angular Material components.
 
-The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+The project utilizes Angular v.10.2.0.
 
 ## Requirements
 
@@ -39,5 +39,4 @@ Things I would like still like to complete:
 * Significant aesthetics overhaul (color, padding, spacing)
 * Add testing
 * Update README with User Stories
-* Upgrade to Angular 10
 * Responsive design
