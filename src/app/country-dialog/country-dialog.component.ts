@@ -11,6 +11,7 @@ export class CountryDialogComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public country: any) { }
 
   ngOnInit(): void {
+    console.log(typeof this.country.population);
   }
 
 }

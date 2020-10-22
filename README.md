@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project was created to meet requirements set for retreiving and displaying data about countries of the world. It showcases some Angular concepts including nested components, directives (attribute, structural), property binding (interpolation, property, event), Input/Output, use of HTTPClientModule, observables, services, dependency injection, and Angular Material components.
+This project was created to meet requirements set for retreiving and displaying data about countries of the world. It showcases some Angular concepts including nested components, directives (attribute, structural), property binding (interpolation, property, event), Input/Output, pipes, use of HTTPClientModule, observables, services, dependency injection, and Angular Material components.
 
-The project utilizes Angular v.10.2.0.
+The project utilizes Angular 10.2.0.
 
 ## Requirements
 

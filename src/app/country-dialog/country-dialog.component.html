@@ -2,7 +2,7 @@
 <mat-dialog-content>
     <strong>Capital:</strong> {{country.capital}}<br>
     <strong>Region:</strong> {{country.region}}<br>
-    <strong>Population:</strong> {{country.population}}<br>
+    <strong>Population:</strong> {{country.population | number}}<br>
     <strong>Currency:</strong> {{country.currencies[0].name}}<br>
     <strong>Language:</strong> {{country.languages[0].name}}<br>
     <strong>Latitude:</strong> {{country.latlng[0]}} <strong>Longitude:</strong> {{country.latlng[1]}}<br>
